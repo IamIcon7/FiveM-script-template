@@ -1,0 +1,72 @@
+{
+	"publisher": "ScriptGeneratorFiveM",
+	"name": "script-generator-fivem",
+	"displayName": "Script Generator FiveM",
+	"description": "Generateur de template de script FiveM",
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.59.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"author": {
+		"name": "Icon7"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/IamIcon7/FiveM-script-gen"
+	},
+	"icon": "icon/five.png",
+	"homepage": "https://github.com/IamIcon7/FiveM-script-gen",
+	"license": "GPLv3",
+	"keywords": [
+		"fivem",
+		"lua",
+		"script",
+		"srive",
+		"Icon7",
+		"gta",
+		"generateur"
+	],
+	"activationEvents": [
+		"onCommand:script-generator-fivem.generate-script"
+	],
+	"main": "./extension.js",
+	"files": [
+		"template/fxmanifest.lua"
+	],
+	"directories": {},
+	"contributes": {
+		"commands": [
+			{
+				"command": "script-generator-fivem.generate-script",
+				"title": "Crée un script FiveM"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "explorerResourceIsFolder",
+					"command": "script-generator-fivem.generate-script"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.59.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "14.x",
+		"eslint": "^7.27.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2"
+	}
+}
